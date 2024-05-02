@@ -1,6 +1,7 @@
 # LILYGO T-Display ESP32 \[16MB\] \[CH9102F\] \[D0WDQ6-V3\]
 Just got yourself a LILYGO T-Display ESP32? Got no idea where to start? This repository has some information you may find useful.
 
+![Image of a LILYGO T-Display ESP32](/images/lilygo-t-display-esp32.png)
 
 ## Official store page
 https://www.lilygo.cc/products/lilygo%C2%AE-ttgo-t-display-1-14-inch-lcd-esp32-control-board?variant=42159376466101
