@@ -231,3 +231,63 @@ print_lines(
     prefix_color=0xFF0000,
 )
 ```
+
+
+
+## Example: How to use GPIO IRQ (interrupt requests) and handler functions
+This example is specific for T-Display ESP32. It has buttons on `GPIO0` and `GPIO35`.  
+Pins `34~39` do not have pull-up or pull-down circuitry.
+
+To get `GPIO35` to trigger only when PRESSED, we have to code a switch. See `only_press_handler`.
+
+You can read more about Pins here:  
+https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/pin
+
+Using IRQ (interrupt requests) we can trigger handler functions even when the program is busy doing something else.
+Here, handler functions are triggered when the button is pressed. The main code is busy doing a loop but the program
+is interrupted and our handler runs regardless.
+
+```python
+import machine
+import time
+from machine import Pin
+
+
+def simple_handler(p):
+    print("Inside 'simple_handler'")
+    print(p)
+
+
+pressed = False
+
+
+def only_press_handler(p):
+    global pressed
+    if pressed:
+        pressed = False
+        return
+    pressed = True
+
+    print("Inside 'only_press_handler'")
+    print(p)
+
+
+# Handler is called when GPIO0 button is DOWN
+# pin = Pin(0, Pin.IN, Pin.PULL_UP, handler=simple_handler, trigger=Pin.IRQ_FALLING)
+
+# Handler is called when GPIO35 button is RELEASED
+# pin = Pin(35, Pin.IN, handler=simple_handler, trigger=Pin.IRQ_RISING)
+
+# Handler is called when GPIO35 button is DOWN and RELEASED
+# pin = Pin(35, Pin.IN, handler=simple_handler, trigger=Pin.IRQ_FALLING)
+
+# Handler is called when GPIO35 button is DOWN (fixed behavior with code)
+# There might be a slight chance the handler is triggered a third time.
+# You can minimize the chance of the coded switch inverting, by adding
+# some 'acttime' (defined in microseconds).
+pin = Pin(35, Pin.IN, handler=only_press_handler, trigger=Pin.IRQ_FALLING)
+
+for i in range(100):
+    print(pin.value())
+    time.sleep(0.1)
+```
