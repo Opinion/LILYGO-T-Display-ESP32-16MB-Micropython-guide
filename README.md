@@ -140,7 +140,8 @@ Add this to your VSCode user config:
 ```
 
 
-### Example code:
+
+## Example: How to use the TFT display
 ![Demo of the example code](/images/example-demo.png)
 
 ```python
