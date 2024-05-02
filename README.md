@@ -39,7 +39,7 @@ Power Supply Specifications:
 Wi-Fi:
  - Standard: FCC/CE-RED/IC/TELEC/KCC/SRRC/NCC
  - Protocol: 802.11 b/g/n(802.11n, speed up to 150Mbps) A-MPDU and A-MSDU polymerization, support 0.4uS Protection interval
- - Frequency range: 2.4GHz~2.5GHz (2400M~2483.5M)
+ - Frequency range: 2.4GHz\~2.5GHz (2400M\~2483.5M)
  - Transmit power: 22dBm
  - Communication distance: 300m
 
