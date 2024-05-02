@@ -140,6 +140,8 @@ Add this to your VSCode user config:
 
 
 ### Example code:
+![Demo of the example code](/images/example-demo.png)
+
 ```python
 import display
 import sys
