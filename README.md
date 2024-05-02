@@ -81,6 +81,7 @@ It seems the TFT display requires an offset. These are the values I have been us
 ### LoBo wiki
  - https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki
  - https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/display
+ - https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/pin
 
 ### External guides
  - https://www.instructables.com/Installing-Loboris-lobo-Micropython-on-ESP32-With-/
