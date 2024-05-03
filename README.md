@@ -89,6 +89,18 @@ It seems the TFT display requires an offset. These are the values I have been us
 
 
 ### Flashing MicroPython
+```
++--[Heads up!]----------------------------------------------------[2024-05-03]--+
+| Keep in mind that 'loboris/MicroPython_ESP32_psRAM_LoBo' is very out of date. |
+| The last build was from 2018. I will still suggest this firmware for this     |
+| type of microcontroller because it has pre-installed modules required for the |
+| display to function. Meanwhile I'm testing official MicroPython firmwares to  |
+| see what works.                                                               |
+|                                                                               |
+| When I figure out how to set up a fresh MicroPython firmware similarly, I     |
+| will update the README with an additional guide (unless I give up or forget). |
++-------------------------------------------------------------------------------+
+```
 Install Arduino IDE and install necessary drivers when prompted.  
 https://www.arduino.cc/en/software
 
@@ -116,6 +128,7 @@ Wait for the process to complete.
 
 
 ### MicroPython for generic ESP32
+
 https://micropython.org/download/ESP32_GENERIC/  
 The ESP32 TTGO T-Display is not supported here. See section above.  
 Use this if you have a generic ESP32 without TTGO T-Display.  
